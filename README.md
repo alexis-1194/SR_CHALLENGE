@@ -15,33 +15,28 @@ Implementando logica de la solución:
 
 1. Creamos el método para la carga del navegador
 
-  public static void launchBrowser() {
-        String baseUrl = "https://apprater.net/add/";
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get(baseUrl);
-        driver.manage().window().maximize();
-  }
+        public static void launchBrowser() {
+              String baseUrl = "https://apprater.net/add/";
+              System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
+              driver = new ChromeDriver();
+              driver.get(baseUrl);
+              driver.manage().window().maximize();
+        }
   
 2. implementamos la logica principal a travez de 2 métodos (sentText y sendAfterValidate).
-
-    public static void sendAfterValidate(String selectorType, String selector, String value){
-    }
-    public static void sendText(String label, String selectorType, String selector, String value) {
-    }
-    
-    
- 3. Adicionalmente podemos implementar un método para verificar la carga completa de la pagina
+ 
+3. Adicionalmente podemos implementar un método para verificar la carga completa de la pagina
   
-    public static boolean waitForLoad(WebDriver driver) {
-        ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-            }
-        };
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        return wait.until(pageLoadCondition);
-    }
+        public static boolean waitForLoad(WebDriver driver) {
+            ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
+                public Boolean apply(WebDriver driver) {
+                    return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+                }
+            };
+            WebDriverWait wait = new WebDriverWait(driver, 30);
+            return wait.until(pageLoadCondition);
+        }
+  
  4. Verificar las pruebas con los ejemplos del caso, utilizando cssSelector, xpath y Name.
  
     launchBrowser();
