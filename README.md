@@ -23,7 +23,7 @@ Implementando logica de la solución:
               driver.manage().window().maximize();
         }
   
-2. implementamos la logica principal a travez de 2 métodos (sentText y sendAfterValidate).
+2. implementamos la logica principal con 2 métodos (sentText y sendAfterValidate).
  
 3. Adicionalmente podemos implementar un método para verificar la carga completa de la pagina
   
